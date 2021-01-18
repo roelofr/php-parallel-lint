@@ -29,9 +29,9 @@
         "sort-packages": true
     },
     "autoload": {
-        "classmap": [
-            "./"
-        ]
+        "psr-4": {
+            "JakubOnderka\\PhpParallelLint\\": "src/"
+        }
     },
     "bin": [
         "parallel-lint"
