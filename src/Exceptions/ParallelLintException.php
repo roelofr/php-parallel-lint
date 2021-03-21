@@ -1,7 +1,7 @@
 <?php
-namespace JakubOnderka\PhpParallelLint;
+namespace PhpParallelLint\PhpParallelLint\Exceptions;
 
-class Exception extends \Exception implements \JsonSerializable
+class ParallelLintException extends \Exception implements \JsonSerializable
 {
     public function jsonSerialize()
     {
