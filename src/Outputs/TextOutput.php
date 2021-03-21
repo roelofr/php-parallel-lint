@@ -1,8 +1,12 @@
 <?php
 
-namespace JakubOnderka\PhpParallelLint;
+namespace PhpParallelLint\PhpParallelLint\Outputs;
 
-class TextOutput implements Output
+use PhpParallelLint\PhpParallelLint\ErrorFormatter;
+use PhpParallelLint\PhpParallelLint\Result;
+use PhpParallelLint\PhpParallelLint\Writers\WriterInterface;
+
+class TextOutput implements OutputInterface
 {
     const TYPE_DEFAULT = 'default',
         TYPE_SKIP = 'skip',
@@ -22,13 +26,13 @@ class TextOutput implements Output
     /** @var int */
     protected $totalFileCount;
 
-    /** @var IWriter */
+    /** @var WriterInterface */
     protected $writer;
 
     /**
-     * @param IWriter $writer
+     * @param WriterInterface $writer
      */
-    public function __construct(IWriter $writer)
+    public function __construct(WriterInterface $writer)
     {
         $this->writer = $writer;
     }

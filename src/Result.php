@@ -1,9 +1,12 @@
 <?php
-namespace JakubOnderka\PhpParallelLint;
+namespace PhpParallelLint\PhpParallelLint;
+
+use PhpParallelLint\PhpParallelLint\Errors\ParallelLintError;
+use PhpParallelLint\PhpParallelLint\Errors\SyntaxError;
 
 class Result implements \JsonSerializable
 {
-    /** @var Error[] */
+    /** @var ParallelLintError[] */
     private $errors;
 
     /** @var array */
@@ -16,7 +19,7 @@ class Result implements \JsonSerializable
     private $testTime;
 
     /**
-     * @param Error[] $errors
+     * @param ParallelLintError[] $errors
      * @param array $checkedFiles
      * @param array $skippedFiles
      * @param float $testTime
@@ -30,7 +33,7 @@ class Result implements \JsonSerializable
     }
 
     /**
-     * @return Error[]
+     * @return ParallelLintError[]
      */
     public function getErrors()
     {

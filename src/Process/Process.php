@@ -1,8 +1,8 @@
 <?php
 
-namespace JakubOnderka\PhpParallelLint\Process;
+namespace PhpParallelLint\PhpParallelLint\Process;
 
-use JakubOnderka\PhpParallelLint\RunTimeException;
+use PhpParallelLint\PhpParallelLint\Exceptions\RuntimeException;
 
 class Process
 {
@@ -49,7 +49,7 @@ class Process
         $this->process = proc_open($cmdLine, $descriptors, $pipes, null, null, array('bypass_shell' => true));
 
         if ($this->process === false || $this->process === null) {
-            throw new RunTimeException("Cannot create new process $cmdLine");
+            throw new RuntimeException("Cannot create new process $cmdLine");
         }
 
         list($stdin, $this->stdout, $this->stderr) = $pipes;
@@ -110,7 +110,7 @@ class Process
     public function getOutput()
     {
         if (!$this->isFinished()) {
-            throw new RunTimeException("Cannot get output for running process");
+            throw new RuntimeException("Cannot get output for running process");
         }
 
         return $this->output;
@@ -123,7 +123,7 @@ class Process
     public function getErrorOutput()
     {
         if (!$this->isFinished()) {
-            throw new RunTimeException("Cannot get error output for running process");
+            throw new RuntimeException("Cannot get error output for running process");
         }
 
         return $this->errorOutput;
@@ -136,7 +136,7 @@ class Process
     public function getStatusCode()
     {
         if (!$this->isFinished()) {
-            throw new RunTimeException("Cannot get status code for running process");
+            throw new RuntimeException("Cannot get status code for running process");
         }
 
         return $this->statusCode;
@@ -144,7 +144,7 @@ class Process
 
     /**
      * @return bool
-     * @throws RunTimeException
+     * @throws RuntimeException
      */
     public function isFail()
     {

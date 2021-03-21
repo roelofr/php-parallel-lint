@@ -61,5 +61,5 @@ if (!$loaded) {
     exit(254);
 }
 
-$app = new JakubOnderka\PhpParallelLint\Application();
+$app = new PhpParallelLint\PhpParallelLint\Application();
 exit($app->run());

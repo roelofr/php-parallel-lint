@@ -1,5 +1,5 @@
 <?php
-namespace JakubOnderka\PhpParallelLint;
+namespace PhpParallelLint\PhpParallelLint;
 
 class Blame implements \JsonSerializable
 {

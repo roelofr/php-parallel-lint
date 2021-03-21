@@ -1,7 +1,7 @@
 <?php
-namespace JakubOnderka\PhpParallelLint;
+namespace PhpParallelLint\PhpParallelLint\Errors;
 
-class Error implements \JsonSerializable
+class ParallelLintError implements \JsonSerializable
 {
     /** @var string */
     protected $filePath;
