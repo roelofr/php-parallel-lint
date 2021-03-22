@@ -1,7 +1,7 @@
 <?php
 namespace PhpParallelLint\PhpParallelLint\Exceptions;
 
-class NotImplementCallbackException extends ParallelLintException
+class CallbackNotImplementException extends ParallelLintException
 {
     protected $className;
 
