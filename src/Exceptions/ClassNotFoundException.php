@@ -1,7 +1,7 @@
 <?php
 namespace PhpParallelLint\PhpParallelLint\Exceptions;
 
-class NotExistsClassException extends ParallelLintException
+class ClassNotFoundException extends ParallelLintException
 {
     protected $className;
     protected $fileName;
