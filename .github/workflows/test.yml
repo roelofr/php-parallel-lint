@@ -104,6 +104,7 @@ jobs:
         with:
           php-version: ${{ matrix.php }}
           coverage: none
+          tools: cs2pr
 
       - name: Install Composer dependencies
         uses: ramsey/composer-install@v1
@@ -120,7 +121,7 @@ jobs:
         run: ./parallel-lint --exclude vendor --exclude tests/examples --no-colors .
 
       - name: 'Integration test 2 - linting own code'
-        run: ./parallel-lint --exclude vendor --exclude tests/examples .
+        run: ./parallel-lint --exclude vendor --exclude tests/examples . --checkstyle | cs2pr
 
       - uses: actions/download-artifact@v2
         with:
