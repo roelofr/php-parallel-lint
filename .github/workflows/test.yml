@@ -118,6 +118,7 @@ jobs:
         run: composer test
 
       - name: 'Integration test 1 - linting own code, no colors'
+        continue-on-error: true
         run: ./parallel-lint --exclude vendor --exclude tests/examples --no-colors .
 
       - name: 'Integration test 2 - linting own code'
